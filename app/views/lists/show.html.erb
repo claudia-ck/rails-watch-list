@@ -1,0 +1,13 @@
+<h1>List : <%= @list.name %></h1>
+<% @list.bookmarks.each do |bookmark| %>
+  <div>
+    <Strong>Bookmark</strong>
+      <p>Comment: <%= bookmark.comment %></p>
+  </div>
+
+  <div>
+    <Strong>Movie</strong>
+    <p>Title: <%= bookmark.movie.title %></p>
+    <p>Rating: <%= bookmark.movie.rating %></p>
+  </div>
+<% end %>
