@@ -10,6 +10,8 @@ class ListsController < ApplicationController
 
   def show
     @list=List.find(params[:id])
+    @bookmark = Bookmark.new
+    @review = Review.new
   end
 
   # save the form input and set the prviate params
@@ -26,5 +28,9 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
+  end
+
+  def bookmark_params
+    params.require(:bookmark).permit(:comment, :movie_id)
   end
 end

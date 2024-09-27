@@ -1,3 +1,5 @@
+<div class="top"></div>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
    <h1>Save your move lists</h1>
@@ -5,9 +7,7 @@
 </div>
 
 
-<div class="top"></div>
-
-<div class="container m" >
+<div class="container mt-5" >
   <div class="row" >
 
     <%# Left column - Lists%>
@@ -19,7 +19,7 @@
     </div>
 
     <%# Right column - create button %>
-    <div class="col-md-4 mt-5">
+    <div class="col-md-4 ">
         <%= link_to "Create a movie list", new_list_path, method: :get , class: "btn btn-success" %>
     </div>
   </div>
