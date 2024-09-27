@@ -1,6 +1,26 @@
-<h1>Lists index</h1>
-<div>
-  <% @lists.each do |list| %>
-    <p><%= list.id %> - <%= list.name %></p>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+   <h1>Save your move lists</h1>
+  </div>
+</div>
+
+
+<div class="top"></div>
+
+<div class="container m" >
+  <div class="row" >
+
+    <%# Left column - Lists%>
+    <div class="col-md-8">
+      <h1>My Lists</h1>
+      <% @lists.each do |list| %>
+        <p><%= list.id %> - <%= link_to list.name, list_path(list.id) %></p>
+      <% end %>
+    </div>
+
+    <%# Right column - create button %>
+    <div class="col-md-4 mt-5">
+        <%= link_to "Create a movie list", new_list_path, method: :get , class: "btn btn-success" %>
+    </div>
+  </div>
 </div>

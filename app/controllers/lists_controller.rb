@@ -15,9 +15,11 @@ class ListsController < ApplicationController
   # save the form input and set the prviate params
   def create
     @list = List.new(list_params)
-    @list.save
-    @raise
-    redirect_to lists_path
+    if @list.save
+      redirect_to lists_path, notice: "list successfully created."
+    else
+      render :new
+    end
   end
 
   private
